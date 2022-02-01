@@ -1,18 +1,18 @@
 package com.prisonpony.assignment.adapter.persistence.jpa
 
-import static com.prisonpony.assignment.test.data.Entities.aTicket
-
-import com.prisonpony.assignment.adapter.rest.TicketController
+import com.prisonpony.assignment.adapter.rest.LoyaltyPointController
 import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 import spock.lang.Subject
 
-class TicketControllerSpec extends Specification {
+import static com.prisonpony.assignment.test.data.Entities.aLoyaltyAccount
+
+class LoyaltyAccountControllerSpec extends Specification {
 
     TicketRepository repository = Mock()
 
     @Subject
-    TicketController controller = new TicketController(repository)
+    LoyaltyPointController controller = new LoyaltyPointController(repository)
 
     def "it should return a list of tickets"() {
         given:
@@ -24,7 +24,7 @@ class TicketControllerSpec extends Specification {
         repository.findAll() >> tickets
 
         when:
-        ResponseEntity<List<Ticket>> response = controller.getTickets()
+        ResponseEntity<List<LoyaltyAccount>> response = controller.getAccounts()
 
         then:
         response.body.size() == 2
