@@ -7,7 +7,7 @@ import spock.lang.Subject
 
 import static com.prisonpony.assignment.test.data.Entities.aLoyaltyAccount
 
-class AccountControllerSpec extends Specification {
+class LoyaltyAccountControllerSpec extends Specification {
 
     TicketRepository repository = Mock()
 
