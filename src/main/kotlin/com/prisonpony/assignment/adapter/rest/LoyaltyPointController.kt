@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/accounts")
-class LoyaltyPointController(val loyaltyAccountRepository: LoyaltyAccountRepository) {
+class LoyaltyAccountController(val loyaltyAccountRepository: LoyaltyAccountRepository) {
 
     @GetMapping()
     fun getAccounts(): ResponseEntity<List<LoyaltyAccount>> {
