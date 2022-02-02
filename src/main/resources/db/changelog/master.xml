@@ -6,14 +6,14 @@
                             http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="1" author="mrschneepflug">
-        <createTable tableName="tickets">
+        <createTable tableName="loyalty_account">
             <column name="id" type="uuid">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="seat_id" type="uuid">
+            <column name="customer_uuid" type="uuid">
                 <constraints nullable="false"/>
             </column>
-            <column name="reserved" type="boolean">
+            <column name="points" type="integer">
                 <constraints nullable="false"/>
             </column>
         </createTable>

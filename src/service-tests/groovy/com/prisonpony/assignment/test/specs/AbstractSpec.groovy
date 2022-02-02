@@ -28,6 +28,6 @@ class AbstractSpec extends Specification {
     }
 
     def setup() {
-        databaseActor.deleteAllEntries("tickets")
+        databaseActor.deleteAllEntries("loyalty_account")
     }
 }

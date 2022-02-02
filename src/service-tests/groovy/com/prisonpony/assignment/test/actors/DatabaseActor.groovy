@@ -1,6 +1,6 @@
 package com.prisonpony.assignment.test.actors
 
-import com.prisonpony.assignment.adapter.persistence.jpa.Ticket
+import com.prisonpony.assignment.adapter.persistence.jpa.LoyaltyAccount
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Component
 
@@ -20,9 +20,9 @@ class DatabaseActor {
         jdbcTemplate.execute("delete from ${tableName}")
     }
 
-    void withTickets(List<Ticket> tickets) {
-        tickets.forEach({
-            jdbcTemplate.execute("insert into tickets values('${it.id}', '${it.seatId}', '${it.reserved}')")
+    void withAccounts(List<LoyaltyAccount> accounts) {
+        accounts.forEach({
+            jdbcTemplate.execute("insert into loyalty_account values('${it.id}', '${it.customerUuid}', '${it.points}')")
         })
     }
 }

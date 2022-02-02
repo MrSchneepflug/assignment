@@ -1,17 +1,17 @@
 package com.prisonpony.assignment.test.data
 
-import com.prisonpony.assignment.adapter.persistence.jpa.Ticket
+import com.prisonpony.assignment.adapter.persistence.jpa.LoyaltyAccount
 
 class Entities {
 
-    static Ticket aTicket(Map params = [:]) {
+    static LoyaltyAccount aLoyaltyAccount(Map params = [:]) {
         Map values = [
-                id      : UUID.randomUUID(),
-                seatId  : UUID.randomUUID(),
-                reserved: false,
+                id          : UUID.randomUUID(),
+                customerUuid: UUID.randomUUID(),
+                points      : 0,
         ] << params
 
-        new Ticket(values.id, values.seatId, values.reserved)
+        new LoyaltyAccount(values.id, values.customerUuid, values.points)
     }
 
 }
