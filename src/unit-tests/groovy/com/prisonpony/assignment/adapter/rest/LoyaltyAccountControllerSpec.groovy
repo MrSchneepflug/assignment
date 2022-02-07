@@ -1,5 +1,7 @@
-package com.prisonpony.assignment.adapter.persistence.jpa
+package com.prisonpony.assignment.adapter.rest
 
+import com.prisonpony.assignment.adapter.persistence.jpa.LoyaltyAccount
+import com.prisonpony.assignment.adapter.persistence.jpa.LoyaltyAccountRepository
 import com.prisonpony.assignment.adapter.rest.LoyaltyAccountController
 import org.springframework.http.ResponseEntity
 import spock.lang.Specification
