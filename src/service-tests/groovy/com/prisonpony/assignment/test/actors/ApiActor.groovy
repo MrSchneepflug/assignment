@@ -17,9 +17,9 @@ class ApiActor {
         this.serviceUrl = "http://localhost:" + port
     }
 
-    Map getAllTickets() {
+    Map getAllAccounts() {
         ResponseEntity<String> response = restTemplate.exchange(
-                serviceUrl + "/tickets",
+                serviceUrl + "/accounts",
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
                 String.class

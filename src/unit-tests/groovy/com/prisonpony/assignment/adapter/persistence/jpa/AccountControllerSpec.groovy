@@ -1,6 +1,6 @@
 package com.prisonpony.assignment.adapter.persistence.jpa
 
-import com.prisonpony.assignment.adapter.rest.LoyaltyPointController
+import com.prisonpony.assignment.adapter.rest.LoyaltyAccountController
 import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 import spock.lang.Subject
@@ -9,27 +9,27 @@ import static com.prisonpony.assignment.test.data.Entities.aLoyaltyAccount
 
 class LoyaltyAccountControllerSpec extends Specification {
 
-    TicketRepository repository = Mock()
+    LoyaltyAccountRepository repository = Mock()
 
     @Subject
-    LoyaltyPointController controller = new LoyaltyPointController(repository)
+    LoyaltyAccountController controller = new LoyaltyAccountController(repository)
 
-    def "it should return a list of tickets"() {
+    def "it should return a list of accounts"() {
         given:
-        Ticket ticket1 = aTicket()
-        Ticket ticket2 = aTicket()
-        List<Ticket> tickets = [ticket1, ticket2]
+        LoyaltyAccount account1 = aLoyaltyAccount()
+        LoyaltyAccount account2 = aLoyaltyAccount()
+        List<LoyaltyAccount> accounts = [account1, account2]
 
         and:
-        repository.findAll() >> tickets
+        repository.findAll() >> accounts
 
         when:
         ResponseEntity<List<LoyaltyAccount>> response = controller.getAccounts()
 
         then:
         response.body.size() == 2
-        response.body.find({ it.id == ticket1.id })
-        response.body.find({ it.id == ticket2.id })
+        response.body.find({ it.id == account1.id })
+        response.body.find({ it.id == account2.id })
     }
 
 }
