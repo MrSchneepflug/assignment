@@ -1,11 +1,12 @@
-package com.prisonpony.assignment.adapter.persistence.jpa
+package com.prisonpony.assignment.adapter.rest
 
-import com.prisonpony.assignment.adapter.rest.LoyaltyAccountController
+import static com.prisonpony.assignment.test.data.Entities.aLoyaltyAccount
+
+import com.prisonpony.assignment.adapter.persistence.jpa.LoyaltyAccount
+import com.prisonpony.assignment.adapter.persistence.jpa.LoyaltyAccountRepository
 import org.springframework.http.ResponseEntity
 import spock.lang.Specification
 import spock.lang.Subject
-
-import static com.prisonpony.assignment.test.data.Entities.aLoyaltyAccount
 
 class LoyaltyAccountControllerSpec extends Specification {
 
